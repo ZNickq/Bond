@@ -39,9 +39,10 @@ class BNDTableViewDataSource<DelegateType: BNDTableViewDelegate>: NSObject, NSTa
     self.delegate = delegate
     self.array = array
     super.init()
-
-    tableView.setDataSource(self)
-    tableView.setDelegate(self)
+    
+    tableView.dataSource = self
+    tableView.delegate = self
+    
     tableView.reloadData()
 
     array.observeNew { [weak self] arrayEvent in
