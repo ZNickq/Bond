@@ -248,15 +248,6 @@ extension ObservableArray : RangeReplaceableCollectionType {
   }
 }
 
-extension ObservableArray : ArrayLiteralConvertible {
-
-  public typealias Element = ElementType
-
-  public convenience init(arrayLiteral elements: ElementType ...){
-    self.init(elements)
-  }
-}
-
 public extension ObservableArray where ElementType: Equatable, ElementType: Hashable  {
   
   /// Calculates a difference between the receiver array and the given collection and
